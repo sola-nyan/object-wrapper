@@ -1,5 +1,5 @@
 {
-  "name": "ts-lib-build-vite-boilerplate",
+  "name": "@solanyan/object-wrapper",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "play": "npm run build && node playground/index.js"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
