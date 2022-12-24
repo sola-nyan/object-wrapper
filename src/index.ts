@@ -19,7 +19,7 @@ class ObjectWrapper {
   }
 
   getPropVal(property?: string) {
-    if (property === undefined)
+    if (property == null || property === '')
       return this.object
     return this.access(this.propSplit(property), this.object, undefined)
   }
