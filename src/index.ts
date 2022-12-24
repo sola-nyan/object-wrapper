@@ -5,12 +5,22 @@ class ObjectWrapper {
   }
 
   setPropVal(property: string, value: any, needOldValue?: boolean) {
-    const _oldVal = this.access(this.propSplit(property), this.object, value)
-    if (needOldValue === true)
-      return _oldVal
+    if (property === undefined) {
+      const _oldVal = this.object
+      this.object = value
+      if (needOldValue === true)
+        return _oldVal
+    }
+    else {
+      const _oldVal = this.access(this.propSplit(property), this.object, value)
+      if (needOldValue === true)
+        return _oldVal
+    }
   }
 
-  getPropVal(property: string) {
+  getPropVal(property?: string) {
+    if (property === undefined)
+      return this.object
     return this.access(this.propSplit(property), this.object, undefined)
   }
 
@@ -52,6 +62,19 @@ class ObjectWrapper {
     return info
   }
 }
+
+const PropertyRead = (object: any, property: string) => {
+  const ow = new ObjectWrapper(object)
+  return ow.getPropVal(property)
+}
+
+const PropertyWrite = (object: any, property: string, value: any) => {
+  const ow = new ObjectWrapper(object)
+  return ow.setPropVal(property, value, true)
+}
+
 export {
   ObjectWrapper as default,
+  PropertyRead,
+  PropertyWrite,
 }
