@@ -1,6 +1,6 @@
 {
   "name": "@solanyan/object-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.umd.js",
