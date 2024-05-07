@@ -10,7 +10,7 @@ npm install @solanyan/object-wrapper
 ```
 2. access object property to set/get value like this
 ```
-import ObjectWrapper from @solanyan/object-wrapper
+import { ObjectWrapper } from @solanyan/object-wrapper
 
 const data = {
   a: {
